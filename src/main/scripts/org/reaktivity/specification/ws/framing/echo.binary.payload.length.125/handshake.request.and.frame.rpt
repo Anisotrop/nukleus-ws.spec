@@ -45,7 +45,9 @@ read nukleus:begin.ext ${http:header("sec-websocket-accept", ws:handshakeHash(ke
 
 connected
 
-write [0x82 0xfd] ${writeMask}
+write [0x82]
+write [0xfd]
+write ${writeMask}
 write option mask ${writeMask}
 write ${client125}
 write option mask [0x00 0x00 0x00 0x00]
